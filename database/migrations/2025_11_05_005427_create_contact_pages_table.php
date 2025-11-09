@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('title')->nullable();
             $table->string('address')->nullable();
             $table->string('button_text')->nullable();
-            $table->string('icon')->nullable();
             $table->timestamps();
         });
     }

@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('navigations', function (Blueprint $table) {
             $table->id();
             $table->string('logo')->nullable();
-            $table->string('icon')->nullable();
+            $table->string('label');
+            $table->string('url');
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }
