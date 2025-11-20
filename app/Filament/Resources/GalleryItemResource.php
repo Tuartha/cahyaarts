@@ -54,10 +54,6 @@ class GalleryItemResource extends Resource
                     ->required()
                     ->maxLength(255),
                 
-                Forms\Components\TextInput::make('order')
-                    ->numeric()
-                    ->default(0)
-                    ->helperText('Urutan tampilan gambar dalam galeri.'),
                 
                 Forms\Components\Toggle::make('is_active')
                     ->default(true)
@@ -80,9 +76,6 @@ class GalleryItemResource extends Resource
                     ->limit(50)
                     ->html()
                     ->searchable(),
-                
-                Tables\Columns\TextColumn::make('order')
-                    ->sortable(),
                 
                 Tables\Columns\IconColumn::make('is_active')
                     ->boolean()
