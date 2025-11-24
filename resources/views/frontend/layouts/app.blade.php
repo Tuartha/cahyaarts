@@ -10,11 +10,13 @@
     <link rel="icon" href="{{ asset('storage/' . $siteLogo) }}" sizes="32x32" type="image/png">
     <!-- CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.4.0/fonts/remixicon.min.css" />
-    {{-- <link rel="stylesheet" href="{{ asset('src/swiper-bunde.min.css') }}" /> --}}
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Kaushan+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
-    
-    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/main.js'])
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Kaushan+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
+
+    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/main.js', 'resources/css/swiper-bundle-min.css'])
 </head>
 
 <body class="bg-gray-900">
@@ -34,9 +36,14 @@
     <script>
         AOS.init();
     </script>
-    {{-- <script src="{{ asset('js/swiper-bundle-min.js') }}"></script> --}}
-    {{-- <script defer src="/_vercel/insights/script.js"></script> --}}
-    {{-- <script defer src="/_vercel/speed-insights/script.js"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script>
+        window.va =
+            window.va ||
+            function() {
+                (window.vaq = window.vaq || []).push(arguments);
+            };
+    </script>
 </body>
 
 </html>
