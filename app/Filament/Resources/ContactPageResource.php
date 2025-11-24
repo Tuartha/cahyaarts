@@ -69,7 +69,15 @@ class ContactPageResource extends Resource
 
                 Tables\Columns\TextColumn::make('address')
                     ->label('Alamat')
-                    ->searchable(),
+                    ->url(fn ($record) => $record->button_link, shouldOpenInNewTab: true) // make it clickable
+                    ->color('info')
+                    ->copyable() 
+                    ->copyMessage('Link berhasil disalin!')
+                    ->copyMessageDuration(1500)
+                    ->searchable()
+                    ->limit(30)
+                    ->default('-')
+                    ->placeholder('Belum ada link'),
                     
                 Tables\Columns\TextColumn::make('button_text')
                     ->label('Teks Tombol')

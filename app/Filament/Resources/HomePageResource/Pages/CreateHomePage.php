@@ -9,4 +9,14 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateHomePage extends CreateRecord
 {
     protected static string $resource = HomePageResource::class;
+
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
+
+    protected function getCreatedNotificationTitle(): ?string
+    {
+        return 'Halaman berhasil dibuat';
+    }
 }

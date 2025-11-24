@@ -41,6 +41,14 @@ class HomePageResource extends Resource
                             // ->limit(30)
                             ->helperText('Judul utama yang ditampilkan di halaman'),
 
+                        Forms\Components\TextInput::make('deskripsi')
+                            ->label('Deskripsi')
+                            ->placeholder('Home Page')
+                            ->maxLength(255)
+                            ->required()
+                            ->helperText('Deskripsi yang ditampilkan di halaman')
+                            ->columnSpanFull(),
+
                         Forms\Components\FileUpload::make('background_image')
                             ->label('Gambar/Foto')
                             ->image()
@@ -84,6 +92,10 @@ class HomePageResource extends Resource
                     ->sortable()
                     ->weight('bold')
                     ->searchable(),
+
+                Tables\Columns\TextColumn::make('deskripsi')
+                    ->limit(50)
+                    ->label('Deskripsi'),
 
                 Tables\Columns\ImageColumn::make('background_image')
                     ->label('Gambar Banner')

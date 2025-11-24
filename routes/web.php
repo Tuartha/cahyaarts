@@ -13,12 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/home', [App\Http\Controllers\Frontend\HomeController::class, 'index'])->name('home');
-Route::get('/about', [App\Http\Controllers\Frontend\AboutController::class, 'index'])->name('about');
-Route::get('/services', [App\Http\Controllers\Frontend\ServiceController::class, 'index'])->name('services');
-Route::get('/contact', [App\Http\Controllers\Frontend\ContactController::class, 'index'])->name('contact');
-Route::get('/gallery', [App\Http\Controllers\Frontend\GalleryController::class, 'index'])->name('gallery');
+Route::get('/', [App\Http\Controllers\Frontend\HomeController::class, 'index'])->name('home');

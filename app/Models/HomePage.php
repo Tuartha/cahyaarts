@@ -12,6 +12,7 @@ class HomePage extends Model
     protected $fillable = [
         'background_image',
         'title',
+        'deskripsi',
         'button_text',
         'button_link',
     ];

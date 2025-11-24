@@ -55,26 +55,13 @@ class AboutPageResource extends Resource
                             ->openable()
                             ->columnSpanFull(),
                         
-                        Forms\Components\RichEditor::make('description')
+                        Forms\Components\TextInput::make('description')
                             ->label('Deskripsi')
-                            ->placeholder('Tulis deskripsi tentang sanggar Anda...')
+                            ->placeholder('Home Page')
+                            ->maxLength(255)
                             ->required()
-                            ->toolbarButtons([
-                                'bold',
-                                'italic',
-                                'underline',
-                                'strike',
-                                'link',
-                                'bulletList',
-                                'orderedList',
-                                'h2',
-                                'h3',
-                                'blockquote',
-                                'undo',
-                                'redo',
-                            ])
-                            ->columnSpanFull()
-                            ->helperText('Gunakan editor untuk format teks (bold, italic, list, dll)'),
+                            ->helperText('Deskripsi yang ditampilkan di halaman')
+                            ->columnSpanFull(),
                     ])
                     ->columns(1)
             ]);
@@ -88,8 +75,7 @@ class AboutPageResource extends Resource
                     ->label('Judul')
                     ->searchable()
                     ->sortable()
-                    ->weight('bold')
-                    ->icon('heroicon-o-document-text'),
+                    ->weight('bold'),
                 
                 Tables\Columns\ImageColumn::make('image')
                     ->label('Gambar')
@@ -99,7 +85,6 @@ class AboutPageResource extends Resource
                 Tables\Columns\TextColumn::make('description')
                     ->label('Deskripsi')
                     ->limit(50)
-                    ->html()
                     ->searchable(),
                 
                 Tables\Columns\TextColumn::make('updated_at')

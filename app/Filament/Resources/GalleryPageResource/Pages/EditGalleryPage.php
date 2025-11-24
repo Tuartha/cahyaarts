@@ -13,7 +13,24 @@ class EditGalleryPage extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            Actions\DeleteAction::make(),
+            Actions\DeleteAction::make()
+                ->label('Hapus')
+                ->requiresConfirmation()
+                ->modalHeading('Hapus Halaman Galeri')
+                ->modalDescription('Apakah Anda yakin ingin menghapus data ini?')
+                ->successNotificationTitle('Data berhasil dihapus'),
         ];
+    }
+
+    // Redirect setelah update
+    protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
+
+    // Opsional: Ubah notifikasi sukses
+    protected function getSavedNotificationTitle(): ?string
+    {
+        return 'Perubahan berhasil disimpan';
     }
 }
